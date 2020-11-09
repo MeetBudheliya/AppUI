@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     var segmentMenu = ["RECOMMENDED","RANK","CATEGORY","BEST OF THE MONTH"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        tblView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "tblCell")
     }
 }
 extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource
@@ -37,13 +36,28 @@ class FirstCellOfMain:UICollectionViewCell
 extension ViewController:UITableViewDelegate,UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return segmentMenu.count    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tblView.dequeueReusableCell(withIdentifier: "tblCell", for: indexPath) as! TableViewCell
-        cell.lbl.text = segmentMenu[indexPath.row]
-        return cell
+        return segmentMenu.count
+        
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            let cell = tblView.dequeueReusableCell(withIdentifier: "tblCell", for: indexPath) as! TableViewCell1
+            cell.backgroundColor = .cyan
+            return cell
+        case 1:
+            let cell = tblView.dequeueReusableCell(withIdentifier: "tblCell", for: indexPath)
+            cell.backgroundColor = .brown
+            return cell
+        default:
+            let cell = tblView.dequeueReusableCell(withIdentifier: "tblCell", for: indexPath) as! TableViewCell1
+            cell.backgroundColor = .lightGray
+            return cell
+        }
+    }
+  
+}
+func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
     
 }
