@@ -13,6 +13,8 @@
 		0444FE5025554DEA00E18D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444FE4E25554DEA00E18D83 /* Main.storyboard */; };
 		0444FE5225554DED00E18D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0444FE5125554DED00E18D83 /* Assets.xcassets */; };
 		0444FE5525554DED00E18D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444FE5325554DED00E18D83 /* LaunchScreen.storyboard */; };
+		04C484DC255BB611008189F5 /* secondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C484DB255BB611008189F5 /* secondVC.swift */; };
+		04C484DF255BBC53008189F5 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C484DE255BBC53008189F5 /* FirstVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0444FE5125554DED00E18D83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0444FE5425554DED00E18D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0444FE5625554DED00E18D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C484DB255BB611008189F5 /* secondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondVC.swift; sourceTree = "<group>"; };
+		04C484DE255BBC53008189F5 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				0444FE4C25554DEA00E18D83 /* ViewController.swift */,
 				0444FE4E25554DEA00E18D83 /* Main.storyboard */,
 				0444FE5125554DED00E18D83 /* Assets.xcassets */,
+				04C484DB255BB611008189F5 /* secondVC.swift */,
+				04C484DE255BBC53008189F5 /* FirstVC.swift */,
 				0444FE5325554DED00E18D83 /* LaunchScreen.storyboard */,
 				0444FE5625554DED00E18D83 /* Info.plist */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				0444FE4D25554DEA00E18D83 /* ViewController.swift in Sources */,
 				0444FE4925554DEA00E18D83 /* AppDelegate.swift in Sources */,
+				04C484DC255BB611008189F5 /* secondVC.swift in Sources */,
+				04C484DF255BBC53008189F5 /* FirstVC.swift in Sources */,
 				0444FE4B25554DEA00E18D83 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S366933BA9;
 				INFOPLIST_FILE = AppUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,6 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S366933BA9;
 				INFOPLIST_FILE = AppUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
