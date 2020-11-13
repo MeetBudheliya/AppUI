@@ -14,9 +14,13 @@ class MeVC: UIViewController {
     var data = Data(img: [#imageLiteral(resourceName: "Share Files"),#imageLiteral(resourceName: "Downloads"),#imageLiteral(resourceName: "Security"),#imageLiteral(resourceName: "Whatsapp Cleaner"),#imageLiteral(resourceName: "Cleaner-1"),#imageLiteral(resourceName: "Uninnstall  Apps")], name: ["Share Files","Battery Usage","Secure Files","Whatsapp Cleaner","Trash Cleaner","App Uninstall"], dis:["","89%","","356M","","2 Unused"])
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainAppCollection.reloadData()
         updateBTN.layer.cornerRadius = 10
     }
-   
+    @IBAction func updateBTNClicked(_ sender: UIButton) {
+        print("Clicked")
+    }
+    
 }
 extension MeVC:UICollectionViewDelegate,UICollectionViewDataSource
 {
