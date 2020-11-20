@@ -193,10 +193,12 @@ class secondCollection:UICollectionViewCell
     @IBOutlet weak var sizeLBL: UILabel!
     @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var backIMG: UIImageView!
+    @IBOutlet weak var content: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         btn.layer.cornerRadius = 13
         backIMG.isHidden = true
+        content.layer.cornerRadius = 15
     }
 }
 struct appdata {
