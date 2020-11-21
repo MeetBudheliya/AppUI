@@ -99,6 +99,7 @@ extension MeVC:UICollectionViewDelegate,UICollectionViewDataSource
             cell.btn.setTitle("Install", for: .normal)
             cell.btn.layer.masksToBounds = true
             cell.btn.layer.cornerRadius = cell.btn.frame.height/2
+            cell.content.layer.cornerRadius = 15
             return cell
         }
         else if collectionView == appsCollection2
@@ -112,6 +113,7 @@ extension MeVC:UICollectionViewDelegate,UICollectionViewDataSource
             cell.btn.setTitle("Install", for: .normal)
             cell.btn.layer.masksToBounds = true
             cell.btn.layer.cornerRadius = cell.btn.frame.height/2
+            cell.content.layer.cornerRadius = 15
             return cell
         }
         else
