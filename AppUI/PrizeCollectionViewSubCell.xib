@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PrizeCollectionViewSubCell" id="gTV-IL-0wX" customClass="PrizeCollectionViewSubCell" customModule="AppUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="108"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="60" height="108"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bpc-Wd-Xo0">
+                        <rect key="frame" x="-2.5" y="10" width="65" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="AQ0-6z-hsd"/>
+                            <constraint firstAttribute="height" constant="60" id="cb5-ZA-5mn"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kc7-rR-3cd">
+                        <rect key="frame" x="4" y="70" width="52" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnq-5O-Xbc">
+                                <rect key="frame" x="0.0" y="0.0" width="52" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufs-Vi-Dkj">
+                                <rect key="frame" x="0.0" y="15" width="52" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Lhk-Bz-ZAC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
+                                <state key="normal" title="Button" image="hiclipart.com-33">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Vnq-5O-Xbc" firstAttribute="top" secondItem="kc7-rR-3cd" secondAttribute="top" id="fMe-Sr-0qg"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Bpc-Wd-Xo0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="AV4-kl-jce"/>
+                <constraint firstItem="kc7-rR-3cd" firstAttribute="height" secondItem="Bpc-Wd-Xo0" secondAttribute="height" multiplier="0.5" id="GFm-6n-cUH"/>
+                <constraint firstAttribute="height" secondItem="Bpc-Wd-Xo0" secondAttribute="height" multiplier="1.8" id="LAv-2a-zzG"/>
+                <constraint firstItem="Bpc-Wd-Xo0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="LZh-yp-5Rn"/>
+                <constraint firstItem="kc7-rR-3cd" firstAttribute="top" secondItem="Bpc-Wd-Xo0" secondAttribute="bottom" id="OQO-oB-kDp"/>
+                <constraint firstItem="kc7-rR-3cd" firstAttribute="width" secondItem="Bpc-Wd-Xo0" secondAttribute="width" multiplier="0.8" id="aCp-Hd-LBW"/>
+                <constraint firstItem="kc7-rR-3cd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xj4-hT-eFo"/>
+            </constraints>
+            <size key="customSize" width="51" height="109"/>
+            <connections>
+                <outlet property="coin" destination="ufs-Vi-Dkj" id="4DN-Df-Ll9"/>
+                <outlet property="img" destination="Bpc-Wd-Xo0" id="9sB-P6-Mop"/>
+                <outlet property="name" destination="Vnq-5O-Xbc" id="fRt-yW-YlQ"/>
+            </connections>
+            <point key="canvasLocation" x="-666.66666666666674" y="-83.705357142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="hiclipart.com-33" width="650" height="628"/>
+    </resources>
+</document>

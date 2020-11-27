@@ -6,8 +6,8 @@
 //
 
 import UIKit
+class FirstVC: UIViewController{
 
-class FirstVC: UIViewController {
     @IBOutlet weak var firstCollection: UICollectionView!
     @IBOutlet weak var secondCollection: UICollectionView!
     @IBOutlet weak var thirdCollection: UICollectionView!

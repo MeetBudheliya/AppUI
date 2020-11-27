@@ -6,8 +6,12 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController ,UITextFieldDelegate{
+class viewclass: UIView {
+    
+}
+class ViewController: UIViewController{
+    
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mainCollection: UICollectionView!
@@ -19,7 +23,7 @@ class ViewController: UIViewController ,UITextFieldDelegate{
     @IBOutlet weak var sixthCollection: UICollectionView!
     @IBOutlet weak var coinsBTN: UIButton!
     @IBOutlet weak var contentView: UIView!
-    var segmentMenu = ["RECOMMENDED","RANK","CATEGORY"]
+    var segmentMenu = ["RECOMMENDED","RANK"]
     var imgList:[UIImage] = [#imageLiteral(resourceName: "img2"),#imageLiteral(resourceName: "img1"),#imageLiteral(resourceName: "img3"),#imageLiteral(resourceName: "img2"),#imageLiteral(resourceName: "img1"),#imageLiteral(resourceName: "img3")]
     //    var imgList1:[UIImage] = [#imageLiteral(resourceName: "bg4"),#imageLiteral(resourceName: "bg3"),#imageLiteral(resourceName: "bg2"),#imageLiteral(resourceName: "bg5"),#imageLiteral(resourceName: "bg1"),#imageLiteral(resourceName: "bg5")]
     var app:[appdata] = [appdata(img:[#imageLiteral(resourceName: "SnapChat"),#imageLiteral(resourceName: "Instagram"),#imageLiteral(resourceName: "Twitter"),#imageLiteral(resourceName: "Facebook"),#imageLiteral(resourceName: "Messenger")] , appName: ["SnapChat","Instagram","Twitter","Facebook","Messenger"], rate: ["4.8","4.9","4.3","4.7","4.1"], size:                             ["25.1M","33.8M","21.16M","20.5M","851K"]),
@@ -35,19 +39,76 @@ class ViewController: UIViewController ,UITextFieldDelegate{
         coinsBTN.layer.cornerRadius = coinsBTN.frame.height/2
         coinsBTN.layer.masksToBounds = true
         navigationController?.navigationBar.isHidden = true
+        //        let carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: segmentMenu, delegate: self)
+        //        carbonTabSwipeNavigation.insert(intoRootViewController: self)
+        
         //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         //            view.addGestureRecognizer(tap)
         
+        
     }
+    
     //   func dismissKeyboard() {
     //        //Causes the view (or one of its embedded text fields) to resign the first responder status.
     //       // view.endEditing(true)
     //        searchBar.searchTextField.resignFirstResponder()
     //    }
     //
+    //    func carbonTabSwipeNavigation(_ carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAt index: UInt) -> UIViewController {
+    //        return secondVC()
+    //    }
+    //
+    
+    private lazy var firstViewController: FirstVC = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "FirstView") as! FirstVC
+        self.add(asChildViewController: viewController)
+        return viewController
+    }()
+    
+    private lazy var secondViewController: secondVC = {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SecondView") as! secondVC
+        self.add(asChildViewController: viewController)
+        return viewController
+    }()
+    
+    static func viewController() -> ViewController {
+        return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! ViewController
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    private func add(asChildViewController viewController: UIViewController) {
+        addChild(viewController)
+        contentView.addSubview(viewController.view)
+        viewController.view.frame = contentView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.didMove(toParent: self)
+    }
+    
+    private func remove(asChildViewController viewController: UIViewController) {
+        viewController.willMove(toParent: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParent()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    
     func startTimer() {
         Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(scrollToNextCell), userInfo: nil, repeats: true);
     }
+    
     var x = 0
     
     @objc func scrollToNextCell(){
@@ -65,6 +126,7 @@ class ViewController: UIViewController ,UITextFieldDelegate{
         print("Clicked")
     }
 }
+
 extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -153,26 +215,40 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource
             return UICollectionViewCell()
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selected")
         if collectionView == mainCollection
         {
-            if indexPath.row == 0
-            {
+            //            if indexPath.row == 0
+            //            {
+            //                print("First Selected")
+            //                let second = UIStoryboard(name: "Main", bundle: nil)
+            //                let alertstory = second.instantiateViewController(identifier: "FirstView") as! FirstVC
+            //                self.addChild(alertstory)
+            //            }
+            //            else if indexPath.row == 1
+            //            {
+            //                print("Second Selected")
+            //                let second = UIStoryboard(name: "Main", bundle: nil)
+            //                let alertstory = second.instantiateViewController(identifier: "secondView") as! secondVC
+            //                self.addChild(alertstory)
+            //            }
+            
+            
+            if indexPath.row == 0 {
                 print("First Selected")
-                let second = UIStoryboard(name: "Main", bundle: nil)
-                let alertstory = second.instantiateViewController(identifier: "FirstView")
-                self.contentView?.addSubview(alertstory.view)
-            }
-            else if indexPath.row == 1
-            {
+                remove(asChildViewController: secondViewController)
+                add(asChildViewController: firstViewController)
+            } else {
                 print("Second Selected")
-                let second = UIStoryboard(name: "Main", bundle: nil)
-                let alertstory = second.instantiateViewController(identifier: "secondView")
-                self.contentView?.addSubview(alertstory.view)
+                remove(asChildViewController: firstViewController)
+                add(asChildViewController: secondViewController)
             }
+            
         }
     }
+    
     
 }
 class FirstCellOfMain:UICollectionViewCell
